@@ -1,30 +1,24 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://otimjunior:GILLIANZ@cluster0.kqaubaq.mongodb.net/BLB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB');
+const citizenSchema = new mongoose.Schema({
+    name: String,
+    dateOfBirth: String,
+    fatherName: String,
+    motherName: String,
+    gender: String,
+    bloodGroup: String,
 });
 
-// Define multiple models
-const CitizenModel = mongoose.model('Citizen', {
-  name: String,
-  dateOfBirth: String, 
-  fatherName: String,
-  motherName: String, 
-  gender: String, 
-  bloodGroup: String 
-});
-
-const TitleModel = mongoose.model('Title', {
+const titleSchema = new mongoose.Schema({
     ownerName: String,
-    location: String, 
+    location: String,
     size: Number,
     coordinates: String,
     titleNumber: String,
-    satellitePhoto: String 
+    satellitePhoto: String,
 });
 
-// Export the models
+const CitizenModel = mongoose.model('Citizen', citizenSchema);
+const TitleModel = mongoose.model('Title', titleSchema);
+
 module.exports = { CitizenModel, TitleModel };
