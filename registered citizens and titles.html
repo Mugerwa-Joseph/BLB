@@ -1,0 +1,39 @@
+<!-- Add this script to fetch and display data -->
+<script>
+    // Fetch and display registered citizens
+    fetch('/citizens')
+        .then(response => response.json())
+        .then(citizens => {
+            const citizenList = document.getElementById('citizenList');
+            citizens.forEach(citizen => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Name: ${citizen.name}, Date of Birth: ${citizen.dateOfBirth}, Gender: ${citizen.gender}`;
+                citizenList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error(error));
+
+    // Fetch and display registered titles
+    fetch('/titles')
+        .then(response => response.json())
+        .then(titles => {
+            const titleList = document.getElementById('titleList');
+            titles.forEach(title => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Owner: ${title.ownerName}, Location: ${title.location}, Size: ${title.size}`;
+                titleList.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error(error));
+</script>
+
+<!-- Add these lists to display the fetched data -->
+<div class="container">
+    <h3>REGISTERED CITIZENS</h3>
+    <ul id="citizenList"></ul>
+</div>
+
+<div class="container">
+    <h4>REGISTERED TITLES</h4>
+    <ul id="titleList"></ul>
+</div>
