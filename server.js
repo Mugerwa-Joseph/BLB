@@ -8,13 +8,17 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// MongoDB Connection
-const dbURI = 'mongodb+srv://otimjunior:GILLIANZ@cluster0.kqaubaq.mongodb.net/BLB?retryWrites=true&w=majority'; // Replace with your actual MongoDB URI
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
+// Connecting to the MongoDB
+mongoose.connect('mongodb+srv://otimjunior:GILLIANZ@cluster0.kqaubaq.mongodb.net/Orders?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
-db.on('error', (error) => console.error('MongoDB connection error:', error));
-db.once('open', () => console.log('Connected to MongoDB'));
+db.on('error', console.error.bind(console, 'Connection Error'));
+db.once('open', function (){
+    console.log('Connected to Our db, BLB');
+});
 
 // Define Mongoose schema and model for Citizen
 const citizenSchema = new mongoose.Schema({
@@ -64,5 +68,5 @@ app.post('/title', async (req, res) => {
 
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Server running at port http://localhost:${port}/`)
+    console.log(`Server running at http://localhost:${port}/`);
 });
