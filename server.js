@@ -62,6 +62,7 @@ app.post('/title', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Server running at port http://localhost:${port}/`)
 });
