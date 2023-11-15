@@ -8,3 +8,106 @@
     margin-top: 30px !important;
     padding: 10px;
 }
+
+/* Reset some default margin and padding */
+body, h1, h2, h3, h4, h5, h6, p, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set background color and font family for the entire page */
+body {
+    background-color: grey;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the main heading */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+}
+
+/* Style subheadings */
+h2, h3, h4, h5, h6 {
+    color: #333;
+}
+
+/* Style form labels */
+label {
+    display: block;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Style text input and select boxes */
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style submit buttons */
+input[type="submit"], input[type="button"] {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* Style containers */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Style the form heading inside containers */
+.container h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Style paragraphs inside containers */
+.container p {
+    color: #666;
+}
+
+/* Style the Title Search form */
+.container form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Style the Title Search input and button */
+.container form input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.container form input[type="button"] {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container form input[type="button"]:hover {
+    background-color: #286090;
+}
