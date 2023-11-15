@@ -1,3 +1,4 @@
+// Import necessary modules and models
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -40,8 +41,28 @@ app.post('/title', async (req, res) => {
     }
 });
 
+// Fetch all registered citizens
+app.get('/citizens', async (req, res) => {
+    try {
+        const citizens = await CitizenModel.find();
+        res.json(citizens);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+});
+
+// Fetch all registered titles
+app.get('/titles', async (req, res) => {
+    try {
+        const titles = await TitleModel.find();
+        res.json(titles);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+});
+
 // Start the server
 const port = 3000;
 app.listen(port, () => {
-    console.log(`Server running at port http://localhost:${port}/`)
+    console.log(`Server running at port http://localhost:${port}/`);
 });
