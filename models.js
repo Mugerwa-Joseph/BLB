@@ -1,4 +1,3 @@
-// models.js
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://otimjunior:GILLIANZ@cluster0.kqaubaq.mongodb.net/BLB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -9,8 +8,8 @@ db.once('open', () => {
 });
 
 // Define multiple models
-const CitizenModel = mongoose.model('citizen', {
-  Name: String,
+const CitizenModel = mongoose.model('Citizen', {
+  name: String,
   dateOfBirth: String, 
   fatherName: String,
   motherName: String, 
@@ -18,7 +17,7 @@ const CitizenModel = mongoose.model('citizen', {
   bloodGroup: String 
 });
 
-const TitleModel = mongoose.model('title', {
+const TitleModel = mongoose.model('Title', {
     ownerName: String,
     location: String, 
     size: Number,
