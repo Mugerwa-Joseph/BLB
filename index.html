@@ -11,43 +11,72 @@
 <body>
     <h1 class="text-center"> BLB TITLES AND CITIZENSHIP MGT SYSTEM</h1>
 
-    <div class="container">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>REGISTRATION FORMS</h3>
-                    <p>citizen and title registration forms</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>REGISTERD CITIZENS</h3>
-                    <P>List of registered citizens go here</P>
-                </div>
-                <div class="col-md-4">
-                    <h3>REGISTERED TITLES</h3>
-                    <P>List of registered titles go here.</P>
-                </div>
-            </div>
-        </div>
-    </div>
+    <form>
+        <h2>Citizen and Land Registration</h2>
 
-    <div class="container">
-        <div class="jumbotron">
-            <div class="row">
-                <div class="col-md-8">
-                    <h3 class="text-center">TITLE TRANSFER</h3>
-                    <p>create the title tranfer form under this section</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>TITLE SEARCH</h4>
-                    <form action="" method="get">
-                        <label for="search">TITLE NUMBER:</label>
-                        <input type="text" name="" id="" placeholder="TITLE NUMBER"> <br>
-                        <input type="button" value="SEARCH" class="btn btn-success">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
+    
+        <h3>Land Title Information</h3>
+
+        <label for="ownerName">Owner's Name:</label>
+        <input type="text" id="ownerName" name="ownerName" required>
+
+        <label for="landLocation">Location of Land:</label>
+        <input type="text" id="landLocation" name="landLocation" required>
+
+        <label for="landSize">Size of Land:</label>
+        <input type="text" id="landSize" name="landSize" required>
+
+        <label for="coordinatesX">X Coordinates:</label>
+        <input type="text" id="coordinatesX" name="coordinatesX" required>
+
+        <label for="coordinatesY">Y Coordinates:</label>
+        <input type="text" id="coordinatesY" name="coordinatesY" required>
+
+        <label for="titleNumber">Title Number:</label>
+        <input type="text" id="titleNumber" name="titleNumber" required>
+
+        <label for="landPhoto">Satellite Photo of Land:</label>
+        <input type="file" id="landPhoto" name="landPhoto" accept="image/*" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <form>
+        <div>
+        <h2>Citizen Registration</h2>
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+    </div>
+    <div>
+        <label for="fatherName">Father's Name:</label>
+        <input type="text" id="fatherName" name="fatherName" required>
+    </div>
+    <div>
+        <label for="motherName">Mother's Name:</label>
+        <input type="text" id="motherName" name="motherName" required>
+    </div>
+    <div>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div>
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" id="bloodGroup" name="bloodGroup" required>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+    </form>
 </body>
 </html>
